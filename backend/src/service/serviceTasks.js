@@ -14,13 +14,24 @@ class ServiceTasks {
     return this.tasks;
   }
 
+  updateTaskStatus = (task, id) => {
+    const index = this.tasks.findIndex((t) => t.id === Number(id));
+    
+    if (index === -1) {
+      return { error: "Tarefa não encontrada." };
+    }
+    this.tasks[index] = { ...this.tasks[index], ...task, id: this.tasks[index].id };
+    return this.tasks[index]; 
+  }
+
   updateTask = (task, id) => {
     const index = this.tasks.findIndex((t) => t.id === Number(id));
+
     if (index === -1) {
       return { error: "Tarefa não encontrada." };
     }
     task.id = this.tasks[index].id;
-    this.tasks[index] = task;
+    this.tasks[index] = { ...this.tasks[index], ...task }; 
     return task;
   }
 
