@@ -1,57 +1,67 @@
-# Teste para Desenvolvedor Full Stack
+# Projeto de Drinks
 
-Bem-vindo ao teste para desenvolvedor Full Stack! O objetivo deste teste é avaliar suas habilidades com **React** e **Node.js** na criação de um web app simples de controle de tarefas.
+Este projeto contém duas páginas que consomem APIs de drinks e renderizam os resultados na tela usando Bootstrap para estilização.
 
-## 📌 Descrição do Projeto
+## Páginas
 
-Você deve desenvolver um **web app de controle de tarefas** com três colunas:
-- **Pendente**
-- **Em andamento**
-- **Feito**
+### 1. Página de Drinks Margarita
 
-Cada tarefa deve conter:
-- **Título**
-- **Descrição**
+- **Arquivo:** `main.js`
+- **API Consumida:** `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`
+- **Descrição:** Esta página exibe uma lista de drinks Margarita. Cada drink é exibido em um cartão que contém o nome do drink, a imagem, a categoria, o tipo de copo, as instruções e os ingredientes.
 
-### 🎯 Funcionalidades
-- Adicionar uma nova tarefa
-- Editar o título e a descrição de uma tarefa
-- Mover uma tarefa entre as colunas
-- Excluir uma tarefa
-- O estado das tarefas pode ser armazenado na memória (não é necessário usar banco de dados)
+### 2. Página de Drinks Alcoólicos
 
-## 🏗️ Tecnologias e Requisitos
+- **Arquivo:** `apiAlcoholicRender.js`
+- **API Consumida:** `https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic`
+- **Descrição:** Esta página exibe uma lista de drinks alcoólicos. Cada drink é exibido em um cartão que contém o nome do drink e a imagem.
 
-O projeto deve ser desenvolvido como um **monorepo** utilizando as seguintes tecnologias:
-- **Front-end**: React
-- **Back-end**: Node.js
-- **Gerenciador de pacotes**: npm, yarn
+## Como Executar
 
-## 🚀 Como Executar o Projeto
+1. **Clone o repositório:**
+   ```sh
+   git clone <URL>
+   cd <NOME_DO_REPOSITORIO>
+   ```
 
-### 1️⃣ Clonar o repositório
-```sh
- git clone https://github.com/ighor-next/challenge.git
- cd challenge
-```
+### Dependências
 
-### 2️⃣ Criar um branch para sua solução
-```sh
- git checkout -b minha-solucao
-```
+- Bootstrap: Para estilização dos componentes.
+- Fetch API: Para consumir as APIs de drinks.
 
-### 7️⃣ Abrir um Pull Request
-Acesse o repositório no GitHub e abra um Pull Request da sua branch **minha-solucao** para a branch principal do projeto.
+### Exemplo de Uso
 
-## 🎯 O que Avaliaremos?
-- Estrutura e organização do código
-- Boas práticas de desenvolvimento
-- Uso adequado do React e Node.js
-- Clareza e legibilidade do código
-- Manutenibilidade do projeto
-- Uso de commits bem descritos
+#### Página de Drinks Margarita
 
-## 📝 Considerações Finais
+- Abra index.html no navegador.
+- Clique no botão "Load Drinks".
+- A lista de drinks Margarita será exibida na tela.
 
-Sinta-se à vontade para adicionar melhorias ao projeto caso ache necessário. Boa sorte! 🚀
+#### Página de Drinks Alcoólicos
 
+- Abra alcolic.html no navegador.
+- Clique no botão "Load Drinks".
+- A lista de drinks alcoólicos será exibida na tela.
+
+#### Página de Drinks Cocktails
+
+- Abra cocktailGlassRender.html no navegador.
+- Clique no botão "Load Drinks".
+- A lista de drinks alcoólicos será exibida na tela.
+
+
+### Estrutura do Projeto
+
+.
+├── js
+│   ├── apiAlcoholic.js
+│   ├── apiAlcoholicRender.js
+│   ├── apiMargarita.js
+│   ├── main.js
+│   └── navbar.js
+├── styles
+│   └── style.css
+├── index.html
+├── alcolic.html
+├── cocktailGlassRender.html
+└── README.md
