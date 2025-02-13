@@ -2,7 +2,6 @@ import apiMargarita from "./apiMargarita.js";
 import createNavbar from "./navbar.js";
 import createH1 from "./createH1.js";
 
-
 const createButton = () => {
   const buttonContainer = document.createElement("div");
   buttonContainer.classList.add("d-flex", "justify-content-center", "my-4");
@@ -19,7 +18,7 @@ const createButton = () => {
       document.querySelector(".container-fluid").remove();
     }
 
-    
+    // Adicionar spinner de carregamento centralizado
     const spinnerContainer = document.createElement('div');
     spinnerContainer.classList.add('d-flex', 'justify-content-center', 'my-4');
     const divSpinner = document.createElement('div');
@@ -34,6 +33,7 @@ const createButton = () => {
 
     const data = await apiMargarita();
 
+    // Remover spinner de carregamento
     spinnerContainer.remove();
 
     if (data.length === 0) {
@@ -45,9 +45,19 @@ const createButton = () => {
       const container = document.createElement("div");
       container.classList.add("container-fluid", "text-center", "mt-5");
 
+      const row = document.createElement("div");
+      row.classList.add("row");
+
       data.forEach((item) => {
+        const col = document.createElement("div");
+        col.classList.add("col-md-4", "mb-3");
+
         const card = document.createElement("div");
-        card.classList.add("card", "mb-3");
+        card.classList.add("card", "h-100");
+
+        const img = document.createElement("img");
+        img.src = item.strDrinkThumb;
+        img.classList.add("card-img-top");
 
         const cardBody = document.createElement("div");
         cardBody.classList.add("card-body");
@@ -55,10 +65,6 @@ const createButton = () => {
         const h5 = document.createElement("h5");
         h5.classList.add("card-title");
         h5.innerText = item.strDrink;
-
-        const img = document.createElement("img");
-        img.src = item.strDrinkThumb;
-        img.classList.add("card-img-top");
 
         const pCategory = document.createElement("p");
         pCategory.classList.add("card-text");
@@ -95,9 +101,11 @@ const createButton = () => {
         cardBody.appendChild(pIngredients);
         cardBody.appendChild(ul);
         card.appendChild(cardBody);
-        container.appendChild(card);
+        col.appendChild(card);
+        row.appendChild(col);
       });
 
+      container.appendChild(row);
       document.body.appendChild(container);
     }
   });

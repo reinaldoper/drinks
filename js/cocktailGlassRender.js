@@ -46,9 +46,15 @@ const createButton = () => {
       const container = document.createElement("div");
       container.classList.add("container-fluid", "text-center", "mt-5");
 
+      const row = document.createElement("div");
+      row.classList.add("row");
+
       data.forEach((item) => {
+        const col = document.createElement("div");
+        col.classList.add("col-md-4", "mb-3");
+
         const card = document.createElement("div");
-        card.classList.add("card", "mb-3");
+        card.classList.add("card", "h-100");
 
         const img = document.createElement("img");
         img.src = item.strDrinkThumb;
@@ -64,9 +70,11 @@ const createButton = () => {
         cardBody.appendChild(h5);
         card.appendChild(img);
         card.appendChild(cardBody);
-        container.appendChild(card);
+        col.appendChild(card);
+        row.appendChild(col);
       });
 
+      container.appendChild(row);
       document.body.appendChild(container);
     }
   });
