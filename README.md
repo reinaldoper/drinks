@@ -65,3 +65,8 @@ Este projeto contém duas páginas que consomem APIs de drinks e renderizam os r
 ├── alcolic.html
 ├── cocktailGlassRender.html
 └── README.md
+
+
+## Qualidade do código:
+
+[![DeepScan grade](https://deepscan.io/api/teams/26116/projects/28843/branches/929790/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=26116&pid=28843&bid=929790)
